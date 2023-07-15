@@ -1,0 +1,398 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+   
+html{
+    color-scheme: light dark;
+}
+
+body{
+    font-size:var(--fs-body);
+    color: var(--clr-neutral-400);
+    margin: 0;
+    font-family: var(--ff-body);    
+    line-height: 1.6;
+}
+
+img,
+svg{
+    max-width: 100%;
+    display:block;
+}
+
+:root{
+    --clr-primary: hsl(322, 100%, 66%);
+    --clr-neutral-300: hsl(193, 100%, 96%);
+    --clr-neutral-400: hsl(192, 100%, 9%);
+    --clr-accent:hsl(208, 11%, 55%);
+    --clr-neutral-200: #fff;
+
+
+
+    --fs-body: 1.125rem;
+    --fs-heading: 1.85rem;
+    --fs-content: 1rem;
+    --fs-footer: 1rem;
+    --fs-btn: .9rem;
+
+    --shadow: 0px 0px 2px 2px rgba(143, 137, 137, 0.3);
+
+    --ff-body: 'Open Sans', sans-serif;
+    --ff-header:'Poppins', sans-serif;
+}
+
+
+
+@media (min-width: 900px){
+    :root{
+
+    --fs-body: 1.5rem;
+    --fs-heading: 2.4rem;
+    --fs-content: 1.125rem;
+    --fs-footer: 1.1rem;
+    --fs-btn: 1rem;
+
+    }
+}
+
+
+
+
+
+
+.wrapper{
+   width: min(90%, 1200px);
+   margin-inline: auto;
+}
+
+.wrapper--accent{
+    width: min(80%, 800px);
+   margin-inline: auto;
+}
+
+.header{
+    background-color: var(--clr-neutral-300);
+    background-image: url(/IMAGES/bg-hero-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 600px;
+}
+
+
+
+
+.logo{
+    width: 40%;
+}
+
+.nav{
+    padding-block: 2.5em;
+}
+
+.d-flex{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+
+.intro{
+    text-align: center;
+    font-size: var(--fs-content);
+    display: grid;
+    gap: 2.5em;
+    padding-block: 2.5em
+}
+
+
+.intro__section{
+    padding: 1em;
+}
+
+
+.intro__text{
+ font-family: var(--ff-header);
+ font-weight: 600;
+ font-size: var(--fs-heading);
+}
+
+
+.btn{
+    text-decoration: none;
+    cursor: pointer;
+    background-color: var(--clr-primary);
+    padding: 1em 5em;
+    color: #fff;
+    border-radius: 100vw;
+    display: inline-block;
+    font-weight: 700;
+    font-size: var(--fs-btn);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow);
+}
+
+
+
+.btn::after{
+content: '';
+position: absolute;
+background-color: rgba(231, 229, 229, 0.377);
+width: 100%;
+height: 100%;
+top:0;
+left:0;
+z-index: -1;
+transform: scalex(0);
+transform-origin: right;
+
+transition: transform 0.5s ease-in-out;
+}
+
+
+.btn:hover::after
+{
+    transform: scalex(1);
+    transform-origin: left;
+
+}
+
+.btn--accent{
+    background-color: var(--clr-neutral-200);
+    color:var(--clr-neutral-400);
+    padding: .3em 1em;
+    font-size: var(--fs-btn); 
+    box-shadow: var(--shadow);
+    transition: color 0.5s;
+}
+
+.btn--accent:hover{
+    color:black;
+}
+
+.card{
+    text-align: center;
+    padding-block: 4.5em;
+    background-color: var(--clr-neutral-200);
+    position: relative;
+}
+
+.griddy,
+.grid-flow{
+    display: grid;
+    gap: 1.5em;
+}
+
+.card__items{
+    padding-block: 1.5em;
+    border-radius: 20px;
+    box-shadow:var(--shadow);
+}
+
+.card__image{
+    width: 70%;
+    margin-inline: auto;
+        
+}
+
+.card__content{
+    font-weight: 400;
+    color: var(--clr-accent);
+    font-size: var(--fs-content);
+    margin-inline: 1.5em;
+}
+
+.card__content--text{
+    color: var(--clr-neutral-400);
+    font-weight: 600;
+    font-family:var(--ff-header);    
+}
+
+
+.aside{
+    padding-block: 3.5em;
+   
+}
+
+.aside__section{
+   padding-block: 2em;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    position: absolute;
+    inset: auto 1em -5em 1em;
+}
+
+
+
+.footer{
+    background-color: var(--clr-neutral-400);
+    color: var(--clr-neutral-200);
+    padding-block: 10em;
+    font-size: var(--fs-footer);
+}
+
+.footer--wrapper{
+    margin-block: 2em;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: start;
+    margin-block: 2em;
+  }
+
+.row p{
+    margin-top: 0;
+}
+
+
+.footer__links{
+    margin-block: 2em;
+   padding: 0;
+    margin: 0;
+    list-style: none;  
+}
+
+.footer__links li{
+    margin-top: 2em;
+}
+
+
+.footer__link{
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+.footer__link::after{
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 2px;
+background-color: #fff;
+
+transform: scalex(0);
+transition: transform 0.5s ease-in;
+
+}
+
+.footer__link:hover::after,
+.footer__link:focus::after
+{
+    transform: scalex(1);
+    
+
+    
+}
+
+
+
+.footer__icons-group{
+    margin-block-start: 2em;
+    text-align: center;
+    
+}
+
+
+.footer__text{
+    margin-block: 3em;
+    font-size: .8em;  
+    color: #bbb7b7;
+}
+
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    
+}
+
+
+.icons a{
+    font-size: var(--fs-body);
+    text-decoration: none;
+    color: var(--clr-neutral-200);
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    transition: color 0.5s, border 0.5s, transform 0.5s;
+    
+   
+}
+
+.icons a:hover,
+.icons a:focus{
+    color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+    outline: var(--clr-primary);
+    transform: translateY(-.3em);
+   
+}
+
+
+@media (min-width: 700px){
+    
+.header{
+    background-image: url(/IMAGES/bg-hero-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}    
+
+.intro{
+     text-align: left;
+     grid-template-columns: repeat(2, 1fr);    
+}
+
+.btn--accent{
+    padding: .6em 2em;
+}
+
+
+.grid-flow{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+}
+
+.card__image--accent{
+    grid-column: 3/4;
+}
+
+.card__content--accent{
+    grid-row-start: 1;
+}
+
+.footer--wrapper{
+  display:grid;
+  gap: 2.5em;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footer__icons-group{
+    display: grid;
+    gap: 17em;
+    align-content: space-between;
+}
+   
+.footer__text{
+    text-align: left;
+    margin: 0;
+}
+
+.icons{
+    justify-content: left;
+}
+
+}
